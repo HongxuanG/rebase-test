@@ -6,6 +6,7 @@
   <div class="main">新增一个counter</div>
   <div class="main">新增一个counter</div>
   <div class="main">新增一个counter</div>
+  <p>现在我在main分支上提交代码（没有拉取test分支）</p>
 </template>
 
 <script setup></script>
