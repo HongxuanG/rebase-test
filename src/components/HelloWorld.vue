@@ -7,6 +7,7 @@ const count = ref(0)
 
 <template>
   <div>{{ count }}</div>
+  <div>test 在这里提交了</div>
 </template>
 
 <style scoped>
