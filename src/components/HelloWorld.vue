@@ -14,6 +14,8 @@ onMounted(()=>{
   <div>{{ count }}</div>
   <div ref="div">test 在这里提交了</div>
   <VNODE></VNODE>
+
+  <div>test 在这里提交了</div>
 </template>
 
 <style scoped>
