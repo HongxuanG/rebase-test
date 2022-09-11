@@ -45,30 +45,29 @@ const person1 = {
 const whoIsHe = (person: Record<string, any>) => {
   console.log((person.role & Role.CEO) != 0)
   let role = ''
-  if ((person.role & Role.MATHER) !== 0) {
+  if (person.role & Role.MATHER) {
     role += 'mather '
   }
-  if ((person.role & Role.TEACHER) !== 0) {
+  if (person.role & Role.TEACHER) {
     role += 'teacher '
   }
-  if ((person.role & Role.CEO) !== 0) {
+  if (person.role & Role.CEO) {
     role += 'ceo '
   }
-  if ((person.role & Role.STUDENT) !== 0) {
+  if (person.role & Role.STUDENT) {
     role += 'student '
   }
-  if ((person.role & Role.PROFESSOR) !== 0) {
+  if (person.role & Role.PROFESSOR) {
     role += 'professor '
   }
-  if ((person.role & Role.COP) !== 0) {
+  if (person.role & Role.COP) {
     role += 'cop '
   }
-  if ((person.role & Role.FATHER) !== 0) {
+  if (person.role & Role.FATHER) {
     role += 'father '
   }
   console.log(person.name, 'is a ', role) // 输出 xiaoli is a  mather teacher
 }
-
 whoIsHe(person1)
 </script>
 
