@@ -14,7 +14,18 @@
   <div>main超级计划</div>
 </template>
 
-<script setup></script>
+<script setup>
+// 使用普通的对象
+const Role = {
+  CEO: 1, // 00000000001
+  TEACHER: 1 << 1,
+  STUDENT = 1 << 2,
+  PROFESSOR = 1 << 3,
+  COP = 1 << 4,
+  MATHER = 1 << 5, // 00000100000
+  FATHER = 1 << 6, // 00001000000
+}
+</script>
 
 <style lang="scss" scoped>
 .main {

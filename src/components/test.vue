@@ -25,51 +25,50 @@
 <script setup lang="ts">
 // 角色
 enum Role {
-  CEO = 1,
-  TEACHER = 1 << 1,
+  CEO = 1, // 00000000001
+  TEACHER = 1 << 1, // 00000000010
   STUDENT = 1 << 2,
   PROFESSOR = 1 << 3,
   COP = 1 << 4,
-  MATHER = 1 << 5,
-  FATHER = 1 << 6,
+  MATHER = 1 << 5, // 00000100000
+  FATHER = 1 << 6, // 00001000000
 }
 const getRole = (type: any): number => {
   // @ts-ignore
   return Role[type]
 }
-
-const someone = getRole('MATHER')
-console.log(someone)
-
 const person1 = {
   name: 'xiaoli',
   gender: 0,
-  role: getRole('MATHER') | getRole('TEACHER'),
+  role: getRole('MATHER') | getRole('TEACHER'), // 00001000010
 }
-
 const whoIsHe = (person: Record<string, any>) => {
+  console.log((person.role & Role.CEO) != 0)
   let role = ''
-  switch (true) {
-    case (person.role & Role.MATHER) != 0:
-      role += 'mather '
-    case (person.role & Role.TEACHER) != 0:
-      role += 'teacher '
-    case (person.role & Role.CEO) != 0:
-      role += 'ceo '
-    case (person.role & Role.STUDENT) != 0:
-      role += 'student '
-    case (person.role & Role.PROFESSOR) != 0:
-      role += 'professor '
-    case (person.role & Role.COP) != 0:
-      role += 'cop '
-    case (person.role & Role.FATHER) != 0:
-      role += 'father '
-
-    default:
-      break
+  if ((person.role & Role.MATHER) !== 0) {
+    role += 'mather '
   }
-  console.log(person.name, 'is a ', role)
+  if ((person.role & Role.TEACHER) !== 0) {
+    role += 'teacher '
+  }
+  if ((person.role & Role.CEO) !== 0) {
+    role += 'ceo '
+  }
+  if ((person.role & Role.STUDENT) !== 0) {
+    role += 'student '
+  }
+  if ((person.role & Role.PROFESSOR) !== 0) {
+    role += 'professor '
+  }
+  if ((person.role & Role.COP) !== 0) {
+    role += 'cop '
+  }
+  if ((person.role & Role.FATHER) !== 0) {
+    role += 'father '
+  }
+  console.log(person.name, 'is a ', role) // 输出 xiaoli is a  mather teacher
 }
+
 whoIsHe(person1)
 </script>
 
