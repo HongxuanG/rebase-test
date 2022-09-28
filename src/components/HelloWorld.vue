@@ -6,7 +6,7 @@ const count = ref(0)
 const div = ref(null)
 onMounted(()=>{
   console.log('div', div.value)
-
+  console.log('feature2 新功能分支 c7');
 })
 </script>
 
