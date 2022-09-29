@@ -9,6 +9,10 @@ import Test from './components/test.vue'
   <div>超级计划</div>
   <HelloWorld msg="Vite + Vue" />
   <Test ></Test>
+
+
+  <p>bugfix1</p>
+
 </template>
 
 <style scoped lang="scss">

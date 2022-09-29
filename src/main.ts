@@ -3,5 +3,6 @@ import './style.css'
 import App from './App.vue'
 
 console.log('feature 新功能分支');
+console.log('bugfix2');
 
 createApp(App).mount('#app')
